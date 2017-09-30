@@ -1,0 +1,7 @@
+Bug found in telephone mask input directive and currency input directive:
+  - When you attempt to enter a value anywhere inbetween the already entered input,
+    this value is pushed to the end rather than retaining its intended position.
+    POSSIBLE SOLUTION:
+      I could - on every key input - go over the masked string value and filter out all non-integers.
+      Then use the resulting string as the input value that should be processed into a
+      masked input string value which is diplayed for the user to see.
