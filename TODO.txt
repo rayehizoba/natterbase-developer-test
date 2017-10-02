@@ -5,3 +5,16 @@ Bug found in telephone mask input directive and currency input directive:
       I could - on every key input - go over the masked string value and filter out all non-integers.
       Then use the resulting string as the input value that should be processed into a
       masked input string value which is diplayed for the user to see.
+  - When you press and hold down the backspace key, unexpected behaviours result
+    POSSIBLE SOLUTION:
+      Check StackOverflow to find out if pressing and holding down to a key
+      is not triggered by the el.addEventListener('keyup', ...) listener.
+
+Malicious user could possibly enter invalid user id in url.
+Example: '/user/some-random-non-numeric-val/profile'
+or any abitrary number which could be out of bound.
+  POSSIBLE SOLUTION:
+    Write code to enforce numeric id params and to handle out of bound errors
+
+I normaly prefer to use a unique username or encoding the userId to a code (string)
+as against using the id field in requests like this.
